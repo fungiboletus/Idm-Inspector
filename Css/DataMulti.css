@@ -1,0 +1,38 @@
+/* This file is released under the CeCILL-B V1 licence.*/
+
+#data_multi_add_form table {
+	cursor:pointer;
+}
+
+#data_multi_add_form table td:first-child,
+#data_multi_add_form table th:first-child {
+	width:2em;
+	text-align:center;
+}
+
+#data_multi_add_form table th:first-child::after {
+	display:none;
+}
+
+#data_multi_add_form table td:last-child {
+	width:10em;
+}
+
+#data_multi_add_form table td.name {
+	width:20em;
+}
+#data_multi_add_form .actions button[type=submit] {
+	float:right;
+}
+
+#data_multi_add_form table tr.checked {
+	font-weight:bold;
+}
+
+#data_multi_add_form .data_list td {
+	padding:4px 5px;
+}
+
+#data_multi_add_form .filter-area {
+	margin-top:0;
+}

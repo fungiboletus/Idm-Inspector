@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard - IDM Inspector</title>
+	<link href="Css/bootstrap.min.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="Css/theme.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="Css/application.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="Css/Dashboard.css" media="screen" rel="Stylesheet" type="text/css" />
+	<link href="Css/Cadreur.css" media="screen" rel="Stylesheet" type="text/css" />
+	<script type="text/javascript" src="Js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="Js/application.js"></script>
+	<script type="text/javascript" src="Js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="Js/Dashboard.js"></script>
+	<script type="text/javascript" src="Js/Cadreur.js"></script>
+	<script type="text/javascript" src="Js/jquery.debouncedresize.js"></script>
+	<script type="text/javascript" src="Js/requestAnimationFrame.gist.js"></script>
+	<script type="text/javascript" src="Js/EventBus.js"></script>
+	<script type="text/javascript" src="Js/TimeControl.js"></script>
+	<script type="text/javascript" src="Js/SuperOperator.js"></script>
+	<script type="text/javascript" src="Js/SensAppStorage.js"></script>
+	<script type="text/javascript" src="Js/VideoStorage.js"></script>
+
+</head>
+<body>
+	<div id="dashboard"></div>
+<script type="text/javascript">
+var contentPath = window.location.search.substr(1);
+
+if (!contentPath)
+	contentPath = 'default.js';
+else
+	contentPath += '.js';
+
+var dashboardContent = {};
+
+$.ajax({
+	url: contentPath,
+	dataType: 'json',
+	success: function(json) {
+		dashboardContent = json;
+		initialize_application();
+	},
+	error: function(e) {
+		initialize_application();
+		EventBus.send('error', {
+			status: e.status,
+			message: "Unable to load dashboardContent file: "+e.statusText
+		});
+}});
+
+/*var dashboardContent = {
+	"sensors":
+	{
+		"Bike1_altitude" : "http://demo.sensapp.org:80/sensapp/databases/raw/data/Bike1/altitude",
+		"Bike1_GPS" : "sensapp:lat|http://54.247.172.50:80/sensapp/databases/raw/data/Bike1/latitude|lon|http://54.247.172.50:80/sensapp/databases/raw/data/Bike1/longitude",
+		"Bike1_Video" : "video:1337853610|800|http://localhost/InspecteurDeryque/sample.mov",
+		"Bike1_speed" : "Bike1/ground_speed"
+	},
+	"composite_h":
+	[
+		{"Tachometer": ["Bike1_speed"]},
+		{"DigitalLCD": ["Bike1_altitude","Bike1_speed"]}
+	]
+};*/
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* This file is released under the CeCILL-B V1 licence.*/
+
+body {
+padding-top:55px;
+}
+
+.thumbnails li h4 {
+	text-align:center;
+}
+.thumbnails li:hover a {
+	text-decoration:none;
+}
+
+.navbar .container {
+	position:relative;
+}
+.nav.buttons_inspecteur {
+	margin-left:25px;
+}
+
+.nav.buttons_back {
+	position:absolute;
+	left:200px;
+}
+.btn{
+position:relative;
+}
+.float_right {
+float:right;
+}
+
+.navbar .right {
+float:right;
+}
+#mainContent {
+width:960px;
+padding-left:10px;
+padding-right:10px;
+}
+
+.nav a:hover {
+  background: #444;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#selection_graph li.display_prefs a {
+border-color:#00A1FF;
+}
+#selection_graph li.display_prefs a:hover {
+border-color: #0069D6;
+}
+#selection_graph li.display_selected a {
+border-color:red;
+}
+#selection_graph li.display_selected a:hover {
+border-color:#CC1122;
+}
+/*#selection_graph li.display_prefs a {
+background:pink;
+border:3px solid yellow;
+-webkit-transition: all 1s ease-in-out;
+box-shadow:0px 0px 8px purple;
+}
+
+#selection_graph li.display_prefs a:hover{
+background:blue;
+border:3px solid green;
+-webkit-transform:rotate(72deg);
+}*/
+
+body.fullscreen .navbar {
+transition:top 1s ease 0s;
+-webkit-transition:top 1s ease 0s;
+-moz-transition:top 1s ease 0s;
+}
+body.fullscreen .navbar {
+top:-36px;
+}
+body.fullscreen .navbar:hover {
+top:0px;
+}
+
+.data_list td {
+padding:0;
+}
+.data_list a {
+display:block;
+display:inline-block;
+vertical-align:middle;
+min-height:20px;
+line-height:20px;
+width:100%;
+padding:4px 10px 4px 10px;
+box-sizing: border-box;
+}
+
+.data_list a:hover {
+text-decoration:none;
+}
+
+.alert .alert-img {
+margin-top:1.5em;
+text-align:center;
+}
+.alert .alert-img img {
+box-shadow:1px 1px 8px rgba(0,0,0,0.25);
+}
+
+table .header {
+  cursor: pointer;
+}
+table .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: #000000 transparent;
+  visibility: hidden;
+}
+table .header:hover:after {
+  visibility: visible;
+}
+table .headerSortDown:after, table .headerSortDown:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+table .headerSortUp:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000000;
+  visibility: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+.thumbnail h4
+{
+  color:#333;
+}
+
+.filter-area
+{
+float:right;
+margin-top:-1em;
+margin-bottom:1em;
+}
